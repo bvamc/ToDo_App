@@ -21,9 +21,9 @@
         <button type="submit">Add Item</button>
     </form>
     <ul>
-        <% todo_data.forEach(function(todo){ %>
-            <li><%= todo.item %></li>
-        <% })%>
+        <% for(var i=0; i < todo_data.length; i++){ %>
+            <li><%= todo_data[i].item %></li>
+        <% } %>
     </ul>
 </div>
 </body>

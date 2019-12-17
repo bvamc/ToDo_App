@@ -5,11 +5,11 @@ module.exports = function (app) {
     app.get('/todo', function (request, response) {
         response.render('todo', {todo_data: data});
     });
-    app.post('/todo', urlencodedParser, function (request, response) {
-        console.log(request.data);
-        data.push(request.data);
+    app.post('/todo', urlencodedParser , function(request, response){
+        data.push(request.body);
         response.json(data);
     });
+
     app.delete('/todo', function (request, response) {
         debugger;
     });
