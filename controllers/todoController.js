@@ -1,13 +1,12 @@
-let bodyparser = require('body-parser');
+let bodyParser = require('body-parser');
 let data = [{item: 'get milk'}, {item: 'get haircut'}, {item: 'complete project'}, {item: 'get cake'}];
-let urlencodedParser = bodyparser.urlencoded({extended: false});
+let urlencodedParser = bodyParser.urlencoded({ extended: false });
 module.exports = function (app) {
     app.get('/todo', function (request, response) {
-        debugger;
         response.render('todo', {todo_data: data});
     });
     app.post('/todo', urlencodedParser, function (request, response) {
-        debugger;
+        console.log(request.data);
         data.push(request.data);
         response.json(data);
     });

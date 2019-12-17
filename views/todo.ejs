@@ -16,14 +16,13 @@
 <body>
 <h1>My Todo List</h1>
 <div id="todo-table">
-    <form method="post" action="/todo">
+    <form>
         <input type="text" name="item" placeholder="Add new item" required/>
         <button type="submit">Add Item</button>
     </form>
-    <p><%= todo_data %></p>
     <ul>
         <% todo_data.forEach(function(todo){ %>
-            <li><% todo.item %></li>
+            <li><%= todo.item %></li>
         <% })%>
     </ul>
 </div>
